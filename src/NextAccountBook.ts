@@ -1,11 +1,11 @@
 import AccountBook from "./AccountBook"
 
 export default class NextAccountBook extends AccountBook {
-  clearValues() {
-    this.values = this.values.map(record => record.map(value => ""))
+  public clearValues(): void {
+    this.values = this.values.map((record): string[] => record.map((_value): string => ""))
   }
 
-  setPreviousAmount(previousAmount: number) {
+  public setPreviousAmount(previousAmount: number): void {
     this.values[0][this.PREVIOUS_AMOUNT] = previousAmount
   }
 }

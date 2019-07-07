@@ -1,7 +1,16 @@
 import AccountBook from "./AccountBook"
 import NextAccountBook from "./NextAccountBook"
 
-function onEdit(e: Event) {
+const createNextSheet = (accountBook: AccountBook): void => {
+  accountBook.duplicateSheet()
+  accountBook.moveActiveSheet()
+  const nextAccountBook = new NextAccountBook()
+  nextAccountBook.clearValues()
+  nextAccountBook.setPreviousAmount(accountBook.getNextAmount())
+  nextAccountBook.setValues()
+}
+
+function onEdit(): void {
   const accountBook = new AccountBook()
   if (accountBook.isDone()) {
     createNextSheet(accountBook)
@@ -13,13 +22,4 @@ function onEdit(e: Event) {
   accountBook.setAdjustedAmount()
   accountBook.setNextAmount()
   accountBook.setValues()
-}
-
-const createNextSheet = (accountBook: AccountBook) => {
-  accountBook.duplicateSheet()
-  accountBook.moveActiveSheet()
-  const nextAccountBook = new NextAccountBook()
-  nextAccountBook.clearValues()
-  nextAccountBook.setPreviousAmount(accountBook.getNextAmount())
-  nextAccountBook.setValues()
 }
