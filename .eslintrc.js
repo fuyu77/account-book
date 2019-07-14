@@ -5,7 +5,6 @@ module.exports = {
     },
     "plugins": ["@typescript-eslint"],
     "parser": "@typescript-eslint/parser",
-    "extends": "eslint:recommended",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
