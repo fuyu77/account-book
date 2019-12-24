@@ -8,13 +8,13 @@
   },
   "keywords": [],
   "author": "",
+  "repository": "account-book",
   "license": "ISC",
   "devDependencies": {
-    "@types/google-apps-script": "0.0.53",
-    "@typescript-eslint/eslint-plugin": ">=1.12.0",
-    "@typescript-eslint/parser": ">=1.12.0",
-    "eslint": ">=6.0.1",
-    "lodash": ">=4.17.13",
-    "typescript": ">=3.5.3"
+    "@types/google-apps-script": ">=1.0.7",
+    "@typescript-eslint/eslint-plugin": ">=2.13.0",
+    "@typescript-eslint/parser": ">=2.13.0",
+    "eslint": ">=6.8.0",
+    "typescript": ">=3.7.4"
   }
 }

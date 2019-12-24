@@ -48,7 +48,7 @@ export default class AccountBook {
   }
 
   public setAdjustedAmount(): void {
-    this.values[0][this.ADJUSTED_AMOUNT] = Math.floor(this.values[0][this.TOTAL] / 10000) * 10000
+    this.values[0][this.ADJUSTED_AMOUNT] = this.values[0][this.TOTAL] > 0 ? Math.floor(this.values[0][this.TOTAL] / 10000) * 10000 : 0
   }
 
   public setNextAmount(): void {
