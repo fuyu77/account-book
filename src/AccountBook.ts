@@ -23,9 +23,9 @@ export default class AccountBook {
   public constructor() {
     this.spreadSheet = SpreadsheetApp.getActiveSpreadsheet()
     this.sheet = SpreadsheetApp.getActiveSheet()
-    this.lastRow = this.sheet.getLastRow()
-    this.range = this.sheet.getRange(2, 1, this.lastRow - 1, this.LAST_COLUMN + 1)
+    this.range = this.sheet.getRange(2, 1, this.sheet.getLastRow() - 1, this.LAST_COLUMN + 1)
     this.values = this.range.getValues()
+    this.lastRow = this.values.length - 1
   }
 
   public isDone(): boolean {
@@ -33,8 +33,8 @@ export default class AccountBook {
   }
 
   public setDate(): void {
-    if (this.values[this.lastRow - 2][this.DATE] === "") {
-      this.values[this.lastRow - 2][this.DATE] = Utilities.formatDate(new Date(), "Asia/Tokyo", "M/d")
+    if (this.values[this.lastRow][this.DATE] === "") {
+      this.values[this.lastRow][this.DATE] = Utilities.formatDate(new Date(), "Asia/Tokyo", "M/d")
     }
   }
 
